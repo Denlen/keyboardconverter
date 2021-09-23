@@ -2,7 +2,7 @@ KeyboardLayoutConverter is keyboard qwerty <---> йцукен converter
 
 Примеры кода в файле examples/example.php
 
-use denlen\KeyboardLayoutConverter\KeboardConverter;
+use Denlen\KeyboardLayoutConverter\KeyboardConverter;
 
-$q = new KeboardConverter();
-echo $q->parse('руддщц');
+$q = new KeyboardConverter();
+echo $q->parse('руддщ');
