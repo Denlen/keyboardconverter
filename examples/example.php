@@ -2,7 +2,7 @@
 
 require __DIR__ . '/../vendor/autoload.php';
 
-use denlen\KeyboardLayoutConverter\KeboardConverter;
+use Denlen\KeyboardLayoutConverter\KeyboardConverter;
 
-$q = new KeboardConverter();
-echo $q->parse('руддщц');
+$q = new KeyboardConverter();
+echo $q->parse('руддщ');

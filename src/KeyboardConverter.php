@@ -1,11 +1,8 @@
 <?php
 
-namespace denlen\KeyboardLayoutConverter;
+namespace Denlen\KeyboardLayoutConverter;
 
-use Illuminate\Support\Str;
-use Illuminate\Support\Arr;
-
-final class KeboardConverter
+class KeyboardConverter
 {
     protected $letters = [
         "q" => "й", "w" => "ц", "e" => "у", "r" => "к", "t" => "е", "y" => "н", "u" => "г",
@@ -17,7 +14,7 @@ final class KeboardConverter
 
     public function parse($word)
     {
-        $firstLetter = Str::substr($word, 0,1);
+        $firstLetter = mb_substr($word, 0,1);
         $letters = $this->letters;
 
         if(in_array($firstLetter, $this->letters)){
@@ -29,15 +26,15 @@ final class KeboardConverter
 
     protected function converter(string $word, $letters)
     {
-        for ($i=0; $i < Str::length($word); $i++) {
-            $oneLetter = Str::substr($word, $i,1);
+        for ($i=0; $i < strlen($word); $i++) {
+            $oneLetter = mb_substr($word, $i,1);
 
-            if(isset($letters[Str::lower($oneLetter)])) {
+            if(isset($letters[mb_strtolower($oneLetter)])) {
 
-                if ($oneLetter == Str::lower($oneLetter)) {
-                    $replace = $letters[Str::lower($oneLetter)];
-                } elseif($oneLetter == Str::upper($oneLetter)) {
-                    $replace = Str::upper($letters[Str::lower($oneLetter)]);
+                if ($oneLetter == mb_strtolower($oneLetter)) {
+                    $replace = $letters[mb_strtolower($oneLetter)];
+                } elseif($oneLetter == mb_strtoupper($oneLetter)) {
+                    $replace = mb_strtoupper($letters[mb_strtolower($oneLetter)]);
                 }
 
                 $word = str_replace($oneLetter, $replace, $word);
