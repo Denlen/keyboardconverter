@@ -1,0 +1,34 @@
+{
+    "name": "denlen/keyboardconverter",
+    "description": "Keyboard converter qwerty<->йцукен",
+    "keywords": [
+        "denlen",
+        "keyboard",
+        "converter",
+        "keyboard converter",
+        "php",
+        "laravel"
+    ],
+    "homepage": "https://github.com/Denlen/keyboardconverter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Denlen"
+        }
+
+    ],
+    "require": {
+        "php": "^7.1 || ^8.0",
+        "illuminate/support": "^6|^7|^8|^9"
+
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "denlen\\KeyboardLayoutConverter\\": "src"
+        }
+    },
+    "minimum-stability": "dev"
+}
